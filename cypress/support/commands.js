@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("loginWithSeassion", (email, password) => {
+  cy.session([email,password], () => {
+    cy.visit("/index.php?route=account/login");
+    cy.get('[id="input-email"]').type(email);
+    cy.get('[id="input-password"]').type(password);
+    cy.get('[type="submit"]').eq(0).click();
+  });
+});

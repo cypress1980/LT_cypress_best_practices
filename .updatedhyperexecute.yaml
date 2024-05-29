@@ -1,0 +1,130 @@
+version: "0.1"
+user: kailashpathak
+key: 7aVuffQRbXRFUHrYbLhjSvBUiz3ctCih23e42NrDQxnDWErzD1
+testSuites: []
+pre: [npm install, npm install cypress --save-dev]
+preDirectives:
+    commands: [npm install, npm install cypress --save-dev]
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+post: [cat hyp.yaml]
+postDirectives:
+    commands: [cat hyp.yaml]
+    shell: ""
+    workingDirectory: ""
+jobLabel:
+    - cypress-v10
+    - mac
+    - autosplit
+runson: win
+autosplit: true
+concurrency: 4
+testDiscovery:
+    command: ls cypress/e2e/2-advanced-examples
+    mode: static
+    type: raw
+testDiscoveryResult:
+    - utilities.cy.js
+    - viewport.cy.js
+    - waiting.cy.js
+    - window.cy.js
+testDiscoveryResult2D:
+    - - utilities.cy.js
+    - - viewport.cy.js
+    - - waiting.cy.js
+    - - window.cy.js
+testRunnerCommand: npx cypress run  --spec ./cypress/e2e/2-advanced-examples/$test --browser=chrome-95.0 --headed --config video=false
+globalTimeout: 90
+tunnelOpts:
+    testsPerTunnel: 10
+testSuiteTimeout: 90
+testSuiteStep: 90
+cacheDirectories:
+    - node_modules
+cacheKey: '{{ checksum "package.json" }}'
+retryOnFailure: true
+maxRetries: 1
+jobID: 3acb9566-0acb-4505-94ea-f366ba857229
+codeDirectory: cypress_best_practices
+framework:
+    name: ""
+    flags: []
+    discoveryFlags: []
+    discoveryType: ""
+    runnerFlags: []
+    workingDirectory: ""
+    isTestNGXMLSuite: false
+    defaultReports: false
+    args:
+        appPath: ""
+        testSuitePath: ""
+        xcTestPlanPath: ""
+        shards:
+            mappings: []
+        filters:
+            attributes: []
+        devices: []
+        deviceSelectionStrategy: ""
+        appId: ""
+        testSuiteAppId: ""
+        xcTestPlanId: ""
+        skipXMLOnRun: false
+        skipInstall: false
+        disableReleaseDevice: false
+        platformName: ""
+        isRealMobile: false
+        avoidAppLaunch: false
+        queueTimeout: 0
+        uninstallPreviousBuild: false
+        language: ""
+        locale: ""
+        preservedDevice: false
+        fixedIP: ""
+        resignApp: true
+        minorOsVersion: false
+        playwrightRD: false
+        mobileDC: null
+        skipUninstallPreviousBuild: false
+        isVirtualDevice: false
+    additional_args: null
+    licenseKey: ""
+    userdefinediscovery: false
+    toscaArgs: null
+    version: ""
+    downloadURL: ""
+    baseCommand: ""
+cypressOps:
+    Build: Hyperexecute Cypress Sample Build
+    BuildTags:
+        - Hyperexecute-Cypress
+    Tags:
+        - Hyperexecute
+        - Cypress
+        - MacOS
+        - Autosplit
+cypress: true
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+combineTasksInMatrixMode: false
+captureScreenRecordingForScenarios: false
+maxRetriesPreSteps: 0
+triggerMode: false
+sourcePayload:
+    verifySSL: true
+collectLocalGitData: true
+dynamicAllocation: false
+appium: false
+platformConfig: null
+differentialUpload:
+    enabled: false
+    ttlHours: null
+    forcedDisabled: false
+project:
+    id: ""
+    name: ""
+    type: default
+meta: {}
+alwaysRunPostSteps: false
+errorCategorizedOnFailureOnly: false
+storageType: ""
